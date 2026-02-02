@@ -6,7 +6,7 @@ export default function StudentsList({ className }) {
   useEffect(() => {
     if (!className) return
 
-    fetch(`http://localhost:3000/students?className=${className}`)
+    fetch(`${import.meta.env.VITE_API_URL}/students?className=${className}`)
       .then(res => res.json())
       .then(data => setStudents(data))
   }, [className])

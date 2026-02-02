@@ -33,7 +33,7 @@ useEffect(() => {
           <li key={f._id} className="border p-3 rounded flex justify-between">
             <span>{f.title}</span>
             <a
-              href={`http://localhost:3000${f.fileUrl}`}
+              href={`${API}${f.fileUrl}`}
               target="_blank"
               className="text-blue-600 font-semibold"
             >
