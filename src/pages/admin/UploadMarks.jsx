@@ -135,48 +135,53 @@ export default function UploadMarks() {
         </p>
       )}
 
-      {/* Select section */}
-      <div className="grid grid-cols-3 gap-4 mb-6" role="group" aria-labelledby="selects-label">
-        <h3 id="selects-label" className="sr-only">Select Options</h3>
-        <label htmlFor="class-select" className="block mb-1 font-medium">Select Class</label>
-        <select
-          id="class-select"
-          className="border p-2"
-          value={selectedClass}
-          onChange={(e) => setSelectedClass(e.target.value)}
-        >
-          <option value="">Select Class</option>
-          {classes.map((cls) => (
-            <option key={cls} value={cls}>{cls}</option>
-          ))}
-        </select>
+     {/* Select section */}
+<div className="flex justify-between mb-8">
 
-        <label htmlFor="subject-select" className="block mb-1 font-medium">Select Subject</label>
-        <select
-          id="subject-select"
-          className="border p-2"
-          value={subject}
-          onChange={(e) => setSubject(e.target.value)}
-        >
-          <option value="">Select Subject</option>
-          {subjects.map((s) => (
-            <option key={s} value={s}>{s}</option>
-          ))}
-        </select>
+  <div className="flex flex-col w-[30%]">
+    <label className="mb-2 font-semibold">Select Class</label>
+    <select
+      className="border p-2 rounded w-full"
+      value={selectedClass}
+      onChange={(e) => setSelectedClass(e.target.value)}
+    >
+      <option value="">Select Class</option>
+      {classes.map((cls) => (
+        <option key={cls} value={cls}>{cls}</option>
+      ))}
+    </select>
+  </div>
 
-        <label htmlFor="exam-select" className="block mb-1 font-medium">Select Exam Type</label>
-        <select
-          id="exam-select"
-          className="border p-2"
-          value={examType}
-          onChange={(e) => setExamType(e.target.value)}
-        >
-          <option value="">Select Exam Type</option>
-          {examTypes.map((e) => (
-            <option key={e} value={e}>{e}</option>
-          ))}
-        </select>
-      </div>
+  <div className="flex flex-col w-[30%]">
+    <label className="mb-2 font-semibold">Select Subject</label>
+    <select
+      className="border p-2 rounded w-full"
+      value={subject}
+      onChange={(e) => setSubject(e.target.value)}
+    >
+      <option value="">Select Subject</option>
+      {subjects.map((s) => (
+        <option key={s} value={s}>{s}</option>
+      ))}
+    </select>
+  </div>
+
+  <div className="flex flex-col w-[30%]">
+    <label className="mb-2 font-semibold">Select Exam Type</label>
+    <select
+      className="border p-2 rounded w-full"
+      value={examType}
+      onChange={(e) => setExamType(e.target.value)}
+    >
+      <option value="">Select Exam Type</option>
+      {examTypes.map((e) => (
+        <option key={e} value={e}>{e}</option>
+      ))}
+    </select>
+  </div>
+
+</div>
+
 
       {/* Students list */}
       {loading && <p>Loading students...</p>}
